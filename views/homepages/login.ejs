@@ -1,0 +1,24 @@
+<%- include('../partials/head') %>
+<title>Casha || Login</title>
+<%- include('../partials/headclose') %>
+<%- include('../partials/navbar') %>
+<div class="loginBody">
+  <form method="post" action="/login" novalidate class="loginForm">
+    <div class="logoWrapper">
+      <img src="/images/logo.png" class="logo" />
+    </div>
+    <%- include('../partials/flash') %>
+    <div class="mb-3">
+      <label for="formGroupExampleInput" class="form-label">Email</label>
+      <input required name="username" type="email" class="form-control" placeholder="example@example.com">
+    </div>
+    <div>
+      <label for="formGroupExampleInput" class="form-label">Password</label>
+      <input required name="password" type="password" class="form-control" placeholder="Password">
+    </div>
+    <button class="loginButton">Log In</button>
+    <a style="font-size: 18px;" href="/forget/password" class="signupLink mb-3">Forgot password?</a>
+    <p class="signupLink">Don't have an account? <a href="/signup/student">Signup</a></p>
+  </form>
+</div>
+<%- include('../partials/bodyclose') %>

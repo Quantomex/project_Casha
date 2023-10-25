@@ -1,0 +1,33 @@
+<%- include('../partials/head') %>
+<title>Signup || Student</title>
+<%- include('../partials/headclose') %>
+<%- include('../partials/navbar') %>
+<section class="bodySection">
+  <div class="leftSide">
+    <form method="post" action="/student" novalidate class="signupForm">
+      <h2 class="formHeading">Signup as student</h2>
+      <%- include('../partials/flash') %>
+      <div class="halfnHalf">
+        <input class="form-control" type="text" required name="firstName" placeholder="First Name*" />
+        <input class="form-control" type="text" required name="lastName" placeholder="Last Name*" />
+      </div>
+      <div class="halfnHalf">
+        <input class="form-control" type="email" required name="username" placeholder="Parent/Guardian email*" />
+        <input class="form-control" type="password" required name="password" placeholder="Password*" />
+      </div>
+      <div class="halfnHalf">
+        <input class="form-control" type="text" required name="institute" placeholder="School*" />
+        <input class="form-control" type="text" required name="grade" placeholder="Grade*" />
+      </div>
+      <button type="submit" class="signupButton">Sign Up</button>
+    </form>
+  </div>
+  <div class="right">
+    <h2 class="alreadyRegistered">Already a Student?</h2>
+    <p class="signinText">Sign in and unlock your potential.</p>
+    <a href="/login" class="signInButtonWrapper">
+      <p class="signInButton">Sign In</p>
+    </a>
+  </div>
+</section>
+<%- include('../partials/bodyclose') %>

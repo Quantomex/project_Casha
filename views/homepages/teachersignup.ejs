@@ -1,0 +1,130 @@
+<%- include('../partials/head') %>
+<title>Signup || Teacher</title>
+<%- include('../partials/headclose') %>
+<%- include('../partials/navbar') %>
+<section class="bodySection">
+  <div class="leftSide">
+    <form method="post" action="/teacher" novalidate class="signupForm">
+      <h2 class="formHeading">Signup as teacher</h2>
+      <%- include('../partials/flash') %>
+      <div class="halfnHalf">
+        <input type="text" class="form-control" required name="firstName" placeholder="First Name*" />
+        <input class="form-control" type="text" required name="lastName" placeholder="Last Name*" />
+      </div>
+      <div class="halfnHalf">
+        <input class="form-control" type="email" required name="username" placeholder="Email address*" />
+        <input class="form-control" type="password" required name="password" placeholder="Password*" />
+      </div>
+      <div class="halfnHalf">
+        <input class="form-control" type="text" required name="degree" placeholder="Highest level of education*" />
+        <input class="form-control" type="text" required name="institute" placeholder="Institution/University*" />
+      </div>
+      <div class="halfnHalf">
+        <input maxlength="10" class="form-control" type="tel" name="contact" id="contactInput" placeholder="Phone Number" />
+        <input class="form-control" type="text" required name="profession" placeholder="Profession*" />
+      </div>
+      <div class="fullWidth">
+        <input class="form-control" type="text" name="preferredSubject" required placeholder="Preferred Subject*" />
+      </div>
+      <div class="fullWidth">
+        <input class="form-control" type="text" name="address" required placeholder="Address*" />
+      </div>
+      <div class="halfnHalf">
+        <input class="form-control" type="text" name="postalCode" required placeholder="Postal code*" />
+        <select name="province" required class="province form-control">
+          <option disabled selected>Province</option>
+          <option value="Alberta">Alberta</option>
+          <option value="British Columbia">British Columbia</option>
+          <option value="Manitoba">Manitoba</option>
+          <option value="New Brunswick">New Brunswick</option>
+          <option value="Newfoundland and Labrador">Newfoundland and Labrador</option>
+          <option value="Northwest Territories">Northwest Territories</option>
+          <option value="Nova Scotia">Nova Scotia</option>
+          <option value="Nunavut">Nunavut</option>
+          <option value="Ontario">Ontario</option>
+          <option value="Prince Edward Island">Prince Edward Island</option>
+          <option value="Quebec">Quebec</option>
+          <option value="Saskatchewan">Saskatchewan</option>
+          <option value="Yukon">Yukon</option>
+        </select>
+      </div>
+      <div class="fullWidth">
+        <p class="policeReport">Police Report*</p>
+        <input class="policeReportInput form-control" type="text" name="policeReport" required placeholder="Paste the link to your document" />
+      </div>
+      <div class="daysNTimeSection">
+        <h2 class="formHeading">Select Days and Time</h2>
+        <div class="dayNTime">
+          <p class="day">Monday</p>
+          <div class="toFromContainer">
+            <label for="monday_to">To:</label>
+            <input class="form-control" type="time" name="monday[to]" id="monday_to" />
+            <label for="monday_from">From:</label>
+            <input class="form-control" type="time" name="monday[from]" id="monday_from" />
+            <button type="button" class="clearButton" onclick="clearTimeInputs('monday_to', 'monday_from')">Clear</button>
+          </div>
+        </div>
+        <div class="dayNTime">
+          <p class="day">Tuesday</p>
+          <div class="toFromContainer">
+            <label for="tuesday_to">To:</label>
+            <input class="form-control" type="time" name="tuesday[to]" id="tuesday_to" />
+            <label for="tuesday_from">From:</label>
+            <input class="form-control" type="time" name="tuesday[from]" id="tuesday_from" />
+            <button type="button" class="clearButton" onclick="clearTimeInputs('tuesday_to', 'tuesday_from')">Clear</button>
+          </div>
+        </div>
+        <div class="dayNTime">
+          <p class="day">Wednesday</p>
+          <div class="toFromContainer">
+            <label for="wednesday_to">To:</label>
+            <input class="form-control" type="time" name="wednesday[to]" id="wednesday_to" />
+            <label for="wednesday_from">From:</label>
+            <input class="form-control" type="time" name="wednesday[from]" id="wednesday_from" />
+            <button type="button" class="clearButton" onclick="clearTimeInputs('wednesday_to', 'wednesday_from')">Clear</button>
+          </div>
+        </div>
+        <div class="dayNTime">
+          <p class="day">Thursday</p>
+          <div class="toFromContainer">
+            <label for="thursday_to">To:</label>
+            <input class="form-control" type="time" name="thursday[to]" id="thursday_to" />
+            <label for="thursday_from">From:</label>
+            <input class="form-control" type="time" name="thursday[from]" id="thursday_from" />
+            <button type="button" class="clearButton" onclick="clearTimeInputs('thursday_to', 'thursday_from')">Clear</button>
+          </div>
+        </div>
+        <div class="dayNTime">
+          <p class="day">Friday</p>
+          <div class="toFromContainer">
+            <label for="friday_to">To:</label>
+            <input class="form-control" type="time" name="friday[to]" id="friday_to" />
+            <label for="friday_from">From:</label>
+            <input class="form-control" type="time" name="friday[from]" id="friday_from" />
+            <button type="button" class="clearButton" onclick="clearTimeInputs('friday_to', 'friday_from')">Clear</button>
+          </div>
+        </div>
+        <div class="dayNTime">
+          <p class="day">Saturday</p>
+          <div class="toFromContainer">
+            <label for="saturday_to">To:</label>
+            <input class="form-control" type="time" name="saturday[to]" id="saturday_to" />
+            <label for="saturday_from">From:</label>
+            <input class="form-control" type="time" name="saturday[from]" id="saturday_from" />
+            <button type="button" class="clearButton" onclick="clearTimeInputs('saturday_to', 'saturday_from')">Clear</button>
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="signupButton">Sign Up</button>
+  </div>
+  </form>
+  </div>
+  <div class="right">
+    <h2 class="alreadyRegistered">Already Registered?</h2>
+    <p class="signinText">Sign in and unlock your potential.</p>
+    <a href="/login" class="signInButtonWrapper">
+      <p class="signInButton">Sign In</p>
+    </a>
+  </div>
+</section>
+<%- include('../partials/bodyclose') %>

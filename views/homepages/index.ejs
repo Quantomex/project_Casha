@@ -1,0 +1,97 @@
+<%- include('../partials/head') %>
+<title>Casha || Homepage</title>
+<%- include('../partials/headclose') %>
+<%- include('../partials/topper') %>
+<%- include('../partials/navbar') %>
+<section class="homepageImage">
+  <h1 class="centeredText">Community after school homework assistance</h1>
+  <h4 class="centeredSubtext">Helping each child learn in their own unique ways</h4>
+</section>
+<section id="aboutUs" class="productSpotlight">
+  <div class="textArea">
+    <h2 class="spotlightHeading">Product Spotlight</h2>
+    <p class="productSpotlightDetails">Our new Student Interface enhances remote learning, providing a seamless and personalized experience. Students can customize their dashboard with avatars, while teachers can upload real pictures. Connect with teachers and peers effortlessly on our platform.</p>
+    <div class="buttonWrapper">
+      <a class="gettingStartedbutton" href="/signup/student">Get Started</a>
+    </div>
+  </div>
+  <div class="imageDisplay">
+    <img src="/images/cashadashboard.png" class="productSpotlightImage" alt="Dashboard Image" />
+  </div>
+</section>
+<section class="redContainer">
+  <h3 class="containerHeading">Empowering students through education and support</h3>
+  <p class="subtitleText">learn how casha can help you achieve your goals</p>
+  <div class="buttonWrapper">
+    <a href="/login" class="joinClassButton">Join Classroom</a>
+  </div>
+</section>
+<section class="provenResultsContainer">
+  <h2 class="provenResultsHeading">Proven Results</h2>
+  <p class="containerHeadingSubtitle">Our proud partners experience remarkable outcomes</p>
+  <div class="universityShowcase">
+    <% images.map(({path}) => { %>
+    <div class="imageContainer">
+      <img src="<%= path %>" class="universityImage" />
+    </div>
+    <%}) %>
+  </div>
+</section>
+<div class="quotesSection">
+  <h2 class="inspirationQuoteText">Inspirational Quotes</h2>
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <% quotes.map(({quote, author}) => { %>
+      <div class="swiper-slide">
+        <div class="swiper-client-msg">
+          <i class="iconTop fas fa-quote-left"></i>
+          <p class="quoteText"><%= quote %></p><i class="iconBottom fa-solid fa-quote-right"></i>
+        </div>
+        <div class="swiper-client-data grid grid-one-column">
+          <p class="saying">- <%= author %></p>
+        </div>
+      </div>
+      <%}) %>
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+</div>
+<!-- <section class="awardsSectionContainer">
+  <h2 class="awardSectionHeading">Awards and certifications</h2>
+  <div class="cardWrapper">
+    <div class="cardContainer">
+      <div class="cardHead">
+        <img src="/images/SASCS23GoldWinner.png" class="cardImageHome" />
+      </div>
+      <div class="cardBottom">
+        <p class="cardTextContent">Lorem ipsum</p>
+      </div>
+    </div>
+    <div class="cardContainer">
+      <div class="cardHead">
+        <img src="/images/BigINNOVATION.png" class="cardImageHome" />
+      </div>
+      <div class="cardBottom">
+        <p class="cardTextContent">Lorem ipsum</p>
+      </div>
+    </div>
+    <div class="cardContainer">
+      <div class="cardHead">
+        <img src="/images/TechCaresGradient.png" class="cardImageHome" />
+      </div>
+      <div class="cardBottom">
+        <p class="cardTextContent">Lorem ipsum</p>
+      </div>
+    </div>
+    <div class="cardContainer">
+      <div class="cardHead">
+        <img src="/images/DAWinner.png" class="cardImageHome" />
+      </div>
+      <div class="cardBottom">
+        <p class="cardTextContent">Lorem ipsum</p>
+      </div>
+    </div>
+  </div>
+</section> -->
+<%- include('../partials/footer') %>
+<%- include('../partials/bodyclose') %>
